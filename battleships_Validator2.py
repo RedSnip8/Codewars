@@ -12,13 +12,6 @@ def hasAFour(indices):
 							return True
 		rowPostion += 1
 
-def tooManySingles(indices):
-	rowPostion = 0
-	single_count = 0
-	for row in indices:
-		for cell in row:
-			if row.index(cell)+1
-
 
 def validate_battlefield(battleField):
 	boardVision = [['w','b','w','b','w','b','w','b','w','b'],
