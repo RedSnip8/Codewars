@@ -1,3 +1,5 @@
+import itertools
+
 '''
 Can you help us to find all those variations? It would be nice to have a function, that
 returns a list of all variations for an observed PIN with a length of 1 to 8 digits.
@@ -17,11 +19,19 @@ def get_pins(observed):
     number_perms = {
         '1': ['1', '2', '4'], '2': ['1', '2', '3', '5'], '3': ['2', '3', '6'], '4': ['1', '4', '5', '7'],
         '5': ['2', '4', '5', '6', '8'], '6': ['3', '5', '6', '9'],
-        '7': ['4', '7', '8'], '8': ['5', '7', '8', '9', '0'], '9': ['6', '8', '9']
+        '7': ['4', '7', '8'], '8': ['5', '7', '8', '9', '0'], '9': ['6', '8', '9'], '0': ['0', '8']
     }
 
+    options = []
+    final_permuations = []
+
     for i in observed:
-        print(number_perms[i])
+        options.append(number_perms[i])
+
+    for i in list(itertools.product(*options)):
+        final_permuations.append(''.join(i))
+
+    return final_permuations
 
 
 expectations = [('8', ['5', '7', '8', '9', '0']),
