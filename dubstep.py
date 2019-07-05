@@ -20,7 +20,9 @@ song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
 
 
 def song_decoder(song):
-
+    wub_scrub = song.split('WUB')
+    wub_scrub = " ".join(i for i in wub_scrub if i)
+    return wub_scrub
     # Test Cases
 
 
