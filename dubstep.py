@@ -20,12 +20,10 @@ song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
 
 
 def song_decoder(song):
-    wub_scrub = song.split('WUB')
-    wub_scrub = " ".join(i for i in wub_scrub if i)
-    return wub_scrub
+    return " ".join(i for i in song.split('WUB') if i)
+
+
     # Test Cases
-
-
 print(song_decoder("AWUBBWUBC") == "A B C")
 print(song_decoder("AWUBWUBWUBBWUBWUBWUBC") == "A B C")
 print(song_decoder("WUBAWUBBWUBCWUB") == "A B C")
