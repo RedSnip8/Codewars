@@ -15,7 +15,25 @@ part2:    o   e   a r s   = oears
 '''
 
 
+def in_order(word, fragment):
+    indexes = [word.find(letter) for letter in fragment]
+    return indexes == sorted(indexes)
+
+
+def in_word(word, fragment):
+    for letter in fragment:
+        if letter not in word:
+            return False
+    return True
+
+
 def is_merge(s, part1, part2):
+    if len(part1 + part2) == len(s):
+        if in_word(s, part1) and in_word(s, part2):
+            if in_order(s, part1) and in_order(s, part2):
+                return True
+
+    return False
 
 
 print(is_merge('codewars', 'code', 'wars'))
