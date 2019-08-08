@@ -41,7 +41,14 @@ with relation to running multiple processes at the same time: https://en.wikiped
 
 
 def queue_time(customers, n):
-    print(x)
+    if customers:
+        return 1 if len(customers) == 1
+        return max(customers) if len(customers) > n
+
+        for i in customers:
+
+    else:
+        return 0
 
 
 queue_time([], 1)
